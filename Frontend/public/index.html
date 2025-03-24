@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Disaster Early Warning System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--  Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>AI Disaster Early Warning System</h1>
+            <p>Get real-time disaster predictions and stay safe with AI-powered risk assessments.</p>
+        </div>
+    </header>
+
+    <!--  Prediction Form -->
+    <section class="container">
+        <h2>Select Disaster Type</h2>
+        <select id="disasterType" class="dropdown">
+            <option value="earthquake">🌎 Earthquake</option>
+            <option value="flood">🌊 Flood</option>
+            <option value="wildfire">🔥 Wildfire</option>
+        </select>
+
+        <form id="predictionForm">
+            <label for="latitude">🌍 Latitude:</label>
+            <input type="number" id="latitude" step="0.01" required>
+
+            <label for="longitude">📍 Longitude:</label>
+            <input type="number" id="longitude" step="0.01" required>
+
+            <div id="earthquakeFields">
+                <label for="depth">🔍 Depth (km):</label>
+                <input type="number" id="depth" step="0.1">
+
+                <label for="magnitude">⚠ Magnitude:</label>
+                <input type="number" id="magnitude" step="0.1">
+            </div>
+
+            <div id="floodFields" class="hidden">
+                <label for="rainfall">☔ Rainfall (mm):</label>
+                <input type="number" id="rainfall" step="1">
+
+                <label for="riverLevel">🌊 River Level (m):</label>
+                <input type="number" id="riverLevel" step="0.1">
+            </div>
+
+            <div id="wildfireFields" class="hidden">
+                <label for="temperature">🌡 Temperature (°C):</label>
+                <input type="number" id="temperature" step="0.1">
+
+                <label for="windSpeed">💨 Wind Speed (km/h):</label>
+                <input type="number" id="windSpeed" step="1">
+            </div>
+
+            <button type="submit">🚀 Predict Risk</button>
+        </form>
+
+        <div id="result"></div>
+    </section>
+
+    
+    <!--  Map Section -->
+    <section class="map-container">
+        <h2>Recent Disaster Locations</h2>
+        <div id="map" style="height: 400px;"></div>
+    </section>
+>
+    <!--  Disaster Awareness Gallery -->
+<section class="gallery">
+    <h2>Disaster Awareness</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="assets/earthquake.jpg" alt="Earthquake">
+            <p class="awareness-text">
+                ⚠️ <b>Earthquake Awareness:</b> Drop, Cover, and Hold! Stay indoors, protect your head, and move to open areas away from buildings after shaking stops.
+            </p>
+        </div>
+        <div class="gallery-item">
+            <img src="assets/flood.jpg" alt="Flood">
+            <p class="awareness-text">
+                🌊 <b>Flood Safety:</b> Avoid walking or driving through floodwaters. Move to higher ground, stay informed through alerts, and have an emergency kit ready.
+            </p>
+        </div>
+        <div class="gallery-item">
+            <img src="assets/wildfire.jpg" alt="Wildfire">
+            <p class="awareness-text">
+                🔥 <b>Wildfire Safety:</b> Create defensible space around your home, evacuate when ordered, and wear an N95 mask to reduce smoke inhalation.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

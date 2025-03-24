@@ -1,0 +1,14 @@
+{
+    "name": "disaster-warning-frontend",
+    "version": "1.0.0",
+    "description": "Frontend for AI Disaster Early Warning System",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "cors": "^2.8.5",
+      "express": "^4.17.3"
+    }
+  }
+  
